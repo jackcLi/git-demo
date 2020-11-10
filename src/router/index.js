@@ -1,23 +1,68 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../components/City.vue";
-
+// import Home from "../components/City.vue";
 Vue.use(VueRouter);
 
-const routes = [{
+const routes = [
+   
+    {
         path: "/",
-        name: "Home",
-        component: Home,
+        name: "User",
+        component: () =>
+            import("../views/User.vue"),
+           
     },
     {
-        path: "/about",
-        name: "About",
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () =>
-            import ( /* webpackChunkName: "about" */ "../views/About.vue"),
+      path: "/register",
+      name: "register",
+      component: () =>
+          import("../views/Register.vue"),
     },
+    {
+      path: "/Download",
+      name: "download",
+      component: () =>
+          import("../views/download.vue"),
+    },
+    {
+      path: "/Service",
+      name: "service",
+      component: () =>
+          import("../views/service.vue"),
+    },
+    {
+        path: "/QuestionDetail",
+        name: "questionDetail",
+        component: () =>
+            import("../views/questionDetail.vue"),
+      },
+      {
+        path: "/Balance",
+        name: "balance",
+        component: () =>
+            import("../views/balance.vue"),
+      },
+      {
+        path: "/Discount",
+        name: "discount",
+        component: () =>
+            import("../views/Discount.vue"),
+      },
+      {
+        path: "/Integral",
+        name: "integral",
+        component: () =>
+            import("../views/integral.vue"),
+      },
+      {
+        path: "/Order",
+        name: "order",
+        component: () =>
+            import("../views/order.vue"),
+      },
+
+
+      
 ];
 
 const router = new VueRouter({
